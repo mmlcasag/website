@@ -1,0 +1,1 @@
+create sequence web_itprod_venda_agreg_seq;

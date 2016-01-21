@@ -1,0 +1,1 @@
+   CREATE SEQUENCE seq_camp_preco_origem INCREMENT BY 1 START WITH 4;

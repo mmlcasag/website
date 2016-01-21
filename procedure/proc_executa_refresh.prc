@@ -1,0 +1,9 @@
+CREATE OR REPLACE PROCEDURE PROC_EXECUTA_REFRESH ( snapshot IN VARCHAR2, metodo IN VARCHAR2)
+AS
+BEGIN
+   dbms_output.ENABLE(400000);
+   dbms_snapshot.refresh(SNAPSHOT,METODO);
+EXCEPTION WHEN OTHERS THEN
+     dbms_output.put_line('Erro '||SNAPSHOT||'('||METODO||'):'||sqlerrm);
+END PROC_EXECUTA_REFRESH;
+/

@@ -1,0 +1,2 @@
+/*create table web_xml_gerado (  codigo integer not null,  data_geracao date not null,  servidor varchar2(20) not null,  nome_arquivo varchar2(250) not null,  id_intgr_portal integer not null,  skuInicial integer,  skuFinal integer,  linhaInicial integer,  linhaFinal integer,  tema varchar2(50),  promocao varchar2(150));*/
+alter table web_xml_gerado add constraint pk_web_xml_gerado primary key (codigo);

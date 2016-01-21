@@ -1,0 +1,13 @@
+CREATE TABLE "WEBSITE"."WEB_CONSULTA_LOG"
+  (
+    "COD"    NUMBER NOT NULL ENABLE,
+    "CODFIL" NUMBER NOT NULL ENABLE,
+    "TERMO"  VARCHAR2(50 BYTE) NOT NULL ENABLE,
+    "DATA_INSERCAO" DATE,
+    CONSTRAINT "WEB_CONSULTA_PK" PRIMARY KEY ("COD") 
+  );
+  
+  
+ 
+alter table web_consulta_log
+modify termo varchar2(500);

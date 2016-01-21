@@ -1,0 +1,13 @@
+--
+-- Armazena os pre-descontos do sistema do televendas
+-- 100 registros (geral)
+--
+  CREATE TABLE "WEBSITE"."WEB_PROD_ACORDO" 
+   (	"PRODUTO" NUMBER(6,0) NOT NULL ENABLE, 
+	"VENDEDOR" NUMBER(15,0) NOT NULL ENABLE, 
+	"VALORPADRAO" NUMBER(15,2), 
+	"VALORACORDO" NUMBER(15,2), 
+	"DTACORDO" DATE, 
+	 CONSTRAINT "WEB_PROD_ACORDO_PK" PRIMARY KEY ("PRODUTO", "VENDEDOR") ENABLE
+   ) ;
+ 

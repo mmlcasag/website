@@ -1,0 +1,33 @@
+-- TABELA QUE ARMAZENA AS OCORRENCIAS REMETIDAS PELAS TRANSPORTADORAS.
+-- REGISTROS: - EM TORNO DE 5 POR PEDIDO.
+-- Rodrigo Mandelli
+ 
+CREATE TABLE "WEBSITE"."WEB_OCORRENCIAS_PEDIDOS" 
+( ID_DOCUMENTO VARCHAR2(14) NOT NULL
+, DATA_DOCUMENTO DATE NOT NULL
+, COD_TRANSPORTADORA NUMBER(3) NOT NULL
+, SERIE_NF VARCHAR2(3)
+, NUMERO_NF VARCHAR2(8) NOT NULL
+, COD_OCORRENCIA NUMBER(2) NOT NULL 
+, DATA_OCORRENCIA DATE NOT NULL
+, COD_OBS_OCORRENCIA NUMBER(2)
+, CONSTRAINT "PK_OCORRENCIAS_PEDIDOS" PRIMARY KEY (NUMERO_NF, SERIE_NF, COD_OCORRENCIA)
+, CONSTRAINT "FK_OCORRENCIAS_CODIGO" FOREIGN KEY (COD_OCORRENCIA) REFERENCES "WEBSITE"."WEB_OCORRENCIAS_CODIGOS" (CODIGO)
+);
+
+
+create public synonym WEB_OCORRENCIAS_PEDIDOS for website.WEB_OCORRENCIAS_PEDIDOS;
+
+grant insert, update, select on WEB_OCORRENCIAS_PEDIDOS to acvendas;
+grant insert, update, select on WEB_OCORRENCIAS_PEDIDOS to admias;
+grant insert, update, select on WEB_OCORRENCIAS_PEDIDOS to apcol;
+grant insert, update, select on WEB_OCORRENCIAS_PEDIDOS to autocomweb;
+grant insert, update, select on WEB_OCORRENCIAS_PEDIDOS to colombo;
+grant insert, update, select on WEB_OCORRENCIAS_PEDIDOS to lvirtual;
+grant insert, update, select on WEB_OCORRENCIAS_PEDIDOS to inf_8;
+grant insert, update, select on WEB_OCORRENCIAS_PEDIDOS to trn_8;
+
+---
+
+alter table web_ocorrencias_pedidos
+add filial_nf number(3) not null;

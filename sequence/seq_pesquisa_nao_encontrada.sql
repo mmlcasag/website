@@ -1,0 +1,1 @@
+create sequence seq_pesquisa_nao_encontrada;

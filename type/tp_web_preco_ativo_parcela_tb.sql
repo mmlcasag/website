@@ -1,0 +1,1 @@
+create or replace type tp_web_preco_ativo_parcela_tb is table of tp_web_preco_ativo_parcela;

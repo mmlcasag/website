@@ -1,0 +1,1 @@
+create or replace TYPE tp_web_virtual_gsa_tb AS TABLE OF tp_web_virtual_gsa;

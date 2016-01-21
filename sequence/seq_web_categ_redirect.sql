@@ -1,0 +1,1 @@
+   CREATE SEQUENCE seq_web_categ_redirect;

@@ -1,0 +1,3 @@
+-- Mandelli 09/06/11
+create sequence seq_integr_portal_ip
+MINVALUE 1 MAXVALUE 999999999999999999999999999 INCREMENT BY 1 NOCYCLE ;

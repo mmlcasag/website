@@ -1,0 +1,1 @@
+   CREATE SEQUENCE  seq_web_xml_gerado INCREMENT BY 1 START WITH 1;

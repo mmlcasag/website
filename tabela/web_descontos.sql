@@ -1,0 +1,47 @@
+CREATE TABLE WEB_DESCONTOS (
+  CODDESCONTO NUMBER(15, 0) NOT NULL,
+  DESCRICAO VARCHAR2(60) NOT NULL,
+  CODENTRADA VARCHAR2(4000) NOT NULL,
+  CODCLILV NUMBER(15, 0),
+  CODPROD NUMBER(6, 0),
+  CODITPROD NUMBER(7, 0),
+  DTVALIDADE DATE NOT NULL,
+  FL_ATIVO VARCHAR2(1) NOT NULL,
+  TPUTILIZACAO NUMBER(1, 0) NOT NULL,
+  PRECO NUMBER(10, 2) NOT NULL,
+  USINC VARCHAR2(20) NOT NULL,
+  USALTER VARCHAR2(20) NOT NULL,
+  DTALTER DATE NOT NULL, 
+  PRECO_PED_MIN NUMBER(10, 2),
+  CONSTRAINT WEB_DESCONTOS_PK PRIMARY KEY ( CODDESCONTO )
+);
+
+ALTER TABLE WEB_DESCONTOS
+  ADD CONSTRAINT WEB_DESCONTOS_USU_FK FOREIGN KEY 
+    ( CODCLILV ) REFERENCES WEB_USUARIOS
+    ( CODCLILV ) ENABLE;
+
+ALTER TABLE WEB_DESCONTOS
+  ADD CONSTRAINT WEB_DESCONTOS_PROD_FK FOREIGN KEY 
+    ( CODPROD ) REFERENCES WEB_PROD
+    ( CODPROD ) ENABLE;
+
+ALTER TABLE WEB_DESCONTOS
+  ADD CONSTRAINT WEB_DESCONTOS_ITPROD_FK FOREIGN KEY 
+    ( CODITPROD ) REFERENCES WEB_ITPROD
+    ( CODITPROD ) ENABLE;
+
+-- Projeto - 21/10/2008 - Desconto por plano de pagamento
+alter table web_descontos drop (preco);
+-- Projeto - 28/07/2010 - Desconto por cliente e por produto
+alter table web_descontos
+add acao number(10);
+alter table web_descontos
+add (constraint  fk_web_descontos_acao foreign key (acao) references web_descontos_acoes (codigo));
+
+-- Mandelli
+alter table web_descontos
+add fl_vezes number(10);
+
+alter table web_descontos
+add fl_utilizado number(10);

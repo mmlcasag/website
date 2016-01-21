@@ -1,0 +1,1 @@
+create sequence seq_numcontra_disponivel increment by 1 minvalue 1 maxvalue 999999999;

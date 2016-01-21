@@ -1,0 +1,1 @@
+create sequence seq_integr_portal_acesso_url start with 1 maxvalue 999999999;
